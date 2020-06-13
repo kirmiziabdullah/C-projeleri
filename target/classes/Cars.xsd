@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+	targetNamespace="http://spring.io/guides/gs-producing-web-service"
+	elementFormDefault="qualified">
+	
+	<xs:element name="getCarRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="marka" type="xs:string" />
+				<xs:element name="model" type="xs:string" />
+				<xs:element name="sinif" type="xs:string" />
+				<xs:element name="searchKey" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="car" type="tns:car" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:complexType name="car">
+		<xs:sequence>
+			<xs:element name="marka" type="xs:string" />
+			<xs:element name="model" type="xs:string" />
+			<xs:element name="sinif" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
